@@ -14,16 +14,19 @@ class MinStack {
     }
     
     public void pop() {
+        if (mainstack.isEmpty()) return;
         int remove=mainstack.pop();
-
+        if(remove==minstack.peek()){
+            minstack.pop();
+        }
     }
     
     public int top() {
-        
+        return mainstack.peek();
     }
     
     public int getMin() {
-        
+        return minstack.peek();
     }
 }
 
